@@ -6,3 +6,8 @@
 </p>
 
 <!-- Starry-lei/ng-Lei-todo -->
+<input [value]="title" (keyup.enter)="changeTitle($event.target.value)">
+<button (Click)="changeTitle('Button Clicked!')">
+    Save
+</button>
+
