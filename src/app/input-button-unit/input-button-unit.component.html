@@ -1,13 +1,14 @@
-<p>
-    input-button-unit works!
-    <br>
-    The title is: {{title}}
 
-</p>
 
 <!-- Starry-lei/ng-Lei-todo -->
-<input [value]="title" (keyup.enter)="changeTitle($event.target.value)">
-<button (Click)="changeTitle('Button Clicked!')">
+<input #inputElementRef
+[value]="title" (keyup.enter)="changeTitle($event.target.value)">
+<button (Click)="changeTitle(inputElementRef.value)">
     Save
 </button>
 
+<ul>
+    <li *ngFor="let todoItem of todoList">
+      <app-todo-item></app-todo-item>
+    </li>
+</ul>
